@@ -239,3 +239,56 @@ div.content .container .find-more img{
   right: 0;
   z-index: 3;
 }
+
+/* rodapé */
+
+footer{
+  background-color: hsl(0, 0%, 98%);
+}
+
+footer .container {
+  display: flex;
+  height: 250px;
+  /* align-items: center  ; */
+  flex-direction: column;
+  padding-top: 25px;
+}
+
+footer .container .header{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container .bar{
+  height: 1px;
+  width: 100%;
+  background-color: hsl(216, 30%, 68%);
+  margin: 25px 0;
+}
+
+footer .container .header .icons{
+  display: flex;
+}
+
+footer .container .header .icons img{
+  margin-right:15px;
+  height: 20px;
+}
+
+footer .container .header .icons img:hover{
+  cursor: pointer;
+}
+
+footer .container .content{
+  display: flex;
+}
+
+footer .container .content ul{
+  list-style: none;
+  width: 300px;
+}
+
+footer .container .content ul li:first-child{
+  margin-bottom: 15px;
+  color: #d5d5d5;
+}
