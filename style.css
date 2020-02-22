@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html, body{
@@ -9,7 +9,7 @@ html, body{
 }
 
 .container{
-  max-width: 1150px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -17,7 +17,7 @@ html, body{
 
 header{
   width: 100%;
-  background-color: hsl(0, 0%, 98%);
+  background-color: #fff;
   height: 80px;
   display: flex;
   align-items: center;
@@ -45,6 +45,11 @@ header ul li:last-child{
   padding: 10px 15px;
 }
 
+header ul li:hover{
+  cursor: pointer;
+
+}
+
 /* botões */
 
 input, button{
@@ -53,7 +58,6 @@ input, button{
 
 .btn-outline-primary{
   border: 1px solid #000;
-  /* padding: 10px 15px; */
   background-color: unset;
 }
 
@@ -63,9 +67,175 @@ input, button{
   color: hsl(0, 0%, 98%);
 }
 
+.btn-outline-secondary{
+  border: 1px solid hsl(0, 0%, 98%);
+  background-color: unset;
+  color:  hsl(0, 0%, 98%);
+}
+
+.btn-outline-secondary:hover{
+  cursor: pointer;
+  background-color:  hsl(0, 0%, 98%);
+  color:hsl(270, 9%, 17%); ;
+}
+
 /* banner */
 
 section.banner{
+  height:800px;
+  background-color: #fff;
+  position: relative;
+}
+
+section.banner .container{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+section.banner img{
+  margin-top: 75px;
+  object-fit: contain;
+  height: 640px;
+}
+
+section.banner .banner-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.banner .banner-text h1,section.banner .banner-text  p{
+  color: hsl(0, 0%, 98%);
+}
+
+section.banner .banner-text h1{
+  font-size: 60px;
+}
+
+section.banner .banner-text p {
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+section.banner .banner-text button{
+  width:120px;
+  padding:8px 15px;
+  margin-top:20px;
+}
+
+section.banner .banner-text button:hover{
+  cursor: pointer;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(270, 9%, 17%);
+}
+
+section.banner img.lines-top{
+  position: absolute;
+  z-index:1;
+  height: 500px;
+  top: -70px;
+  right: 0;
+}
+
+section.banner img.lines-bottom{
+  position: absolute;
+  z-index:1;
+  height: 500px;
+  bottom: 0px;
+}
+
+section.banner .part1{
   height: 550px;
   background-color:hsl(256, 26%, 20%);
+}
+
+section.banner .bar-top,
+section.banner .bar-bottom{
+  height: 1px;
+  width: 150px;
+  position: absolute;
+}
+
+section.banner .bar-top{
+  top: 80px;
+  background:hsl(0, 0%, 98%);
+}
+
+section.banner .bar-bottom{
+  bottom:0;
+  background-color:hsl(256, 26%, 20%);
+  left: 230px;
+  opacity: 1;
+}
+
+/* conteúdo */
+
+div.content{
+  margin-top: 25px;
+}
+
+div.content .container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+div.content .container h1{
+  font-size: 38px;
+  color: hsl(270, 9%, 17%);
+}
+
+div.content .container div{
+  margin-top: 50px;
+  display: flex;
+}
+
+div.content .container article{
+  width: 33%;
+
+}
+
+div.content .container article strong{
+  display: block;
+  margin: 25px 0;
+  font-size: 22px;
+}
+
+div.content .container article p {
+  color: hsl(273, 4%, 51%);
+  font-size: 16px;
+}
+
+div.content .container .find-more{
+  background: hsl(256, 26%, 20%);
+  height: 250px;
+  margin:150px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+div.content .container .find-more h1{
+  color: #fff;
+  margin-left: 50px;
+  z-index: 2;
+}
+
+div.content .container .find-more button{
+  margin-right: 50px;
+  padding: 15px 25px;
+  position: relative;
+  z-index: 4;
+}
+
+div.content .container .find-more img{
+  position: absolute;
+  right: 0;
+  z-index: 3;
 }
