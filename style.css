@@ -1,3 +1,7 @@
+/* fontes */
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -21,12 +25,15 @@ header{
   height: 80px;
   display: flex;
   align-items: center;
+  font-weight: 400;
+  font-family: 'Karla';
 }
 
 header .container{
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 header ul{
@@ -47,7 +54,19 @@ header ul li:last-child{
 
 header ul li:hover{
   cursor: pointer;
+}
 
+nav{
+  width: 100%;
+}
+
+nav.desktop{
+  display: block;
+}
+
+nav.mobile{
+  display:none;
+  height: 100%;
 }
 
 /* botões */
@@ -94,7 +113,11 @@ section.banner .container{
   position: relative;
 }
 
-section.banner img{
+section.banner img.banner-image-mobile{
+  display: none;
+}
+
+section.banner img.banner-image-desktop{
   margin-top: 75px;
   object-fit: contain;
   height: 640px;
@@ -112,18 +135,21 @@ section.banner .banner-text h1,section.banner .banner-text  p{
 
 section.banner .banner-text h1{
   font-size: 60px;
+  font-family: 'DM Serif Display';
 }
 
 section.banner .banner-text p {
   margin-top: 15px;
   font-size: 18px;
   line-height: 1.6;
+  font-family: "Karla";
 }
 
 section.banner .banner-text button{
   width:120px;
   padding:8px 15px;
   margin-top:20px;
+  font-family: "Karla";
 }
 
 section.banner .banner-text button:hover{
@@ -136,7 +162,7 @@ section.banner img.lines-top{
   position: absolute;
   z-index:1;
   height: 500px;
-  top: -70px;
+  top: 0px;
   right: 0;
 }
 
@@ -179,34 +205,36 @@ div.content{
 
 div.content .container{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
 }
 
 div.content .container h1{
   font-size: 38px;
   color: hsl(270, 9%, 17%);
+  font-family: 'DM Serif Display';
 }
 
 div.content .container div{
   margin-top: 50px;
   display: flex;
+  width: 100%;
 }
 
 div.content .container article{
   width: 33%;
-
 }
 
 div.content .container article strong{
   display: block;
   margin: 25px 0;
   font-size: 22px;
+  font-family: 'DM Serif Display';
 }
 
 div.content .container article p {
   color: hsl(273, 4%, 51%);
   font-size: 16px;
+  font-family: "Karla";
 }
 
 div.content .container .find-more{
@@ -248,8 +276,7 @@ footer{
 
 footer .container {
   display: flex;
-  height: 250px;
-  /* align-items: center  ; */
+  height: auto;
   flex-direction: column;
   padding-top: 25px;
 }
@@ -257,6 +284,7 @@ footer .container {
 footer .container .header{
   display: flex;
   justify-content: space-between;
+  padding-top: 50px;
 }
 
 footer .container .bar{
@@ -281,14 +309,109 @@ footer .container .header .icons img:hover{
 
 footer .container .content{
   display: flex;
+  padding-bottom: 50px;
+  justify-content: center;
 }
 
 footer .container .content ul{
   list-style: none;
-  width: 300px;
+  width: 500px;
+}
+
+footer .container .content ul li{
+  margin: 15px 0;
+  text-transform: uppercase;
+  font-family: "Karla";
 }
 
 footer .container .content ul li:first-child{
-  margin-bottom: 15px;
-  color: #d5d5d5;
+  margin-bottom: 35px;
+  color: hsl(273, 4%, 51%);
+  font-weight: bold;
+}
+
+footer .container .content ul li:hover{
+  cursor: pointer;
+}
+
+/* media querys */
+
+@media(max-width:500px){
+  nav.desktop{
+    display: none;
+  }
+
+  nav.mobile{
+    display: block;
+    padding-top: 20px;
+  }
+
+  section.banner img.banner-image-mobile{
+    display: block;
+    width: 100%;
+  }
+
+  section.banner img.banner-image-desktop{
+    display: none;
+  }
+
+  nav.mobile .container{
+    padding:0 20px;
+  }
+
+  nav.mobile img:hover{
+    cursor: pointer;
+  }
+
+  footer .container .content ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ section.banner .container, 
+ div.content .container,
+ footer .container .content{
+    flex-wrap: wrap;
+  }
+  
+  section.banner{
+    height: auto;
+  }
+
+  section.banner .part1 .container .banner-text{
+    order:2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  section.banner .part1 .container img{
+    order: 1;
+    height: 100px;
+  }
+
+  div.content .container article{
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  div.content .container article:last-child{
+    margin-bottom: 0;
+  }
+
+  div.content .container{
+    text-align: center;
+  }
+
+  div.content .container h1{
+    font-size: 30px;
+  }
+
+  div.content .container div{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
 }
