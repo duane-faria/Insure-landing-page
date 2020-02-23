@@ -41,7 +41,9 @@
     <nav class="mobile">
       <div class="container">
         <img src="./images/logo.svg" style="object-fit:contain;" alt="Logo Insure">
-        <img src="./images/icon-hamburger.svg" alt="Menu mobile">
+        <img id="icon-menu-mobile" style="display: none;" class="active" src="./images/icon-hamburger.svg"
+          alt="Menu mobile">
+        <img id="icon-menu-mobile-close" style="display: none;" src="./images/icon-close.svg" alt="Menu mobile">
       </div>
     </nav>
   </header>
@@ -50,20 +52,26 @@
     <img class="banner-image-mobile" src="./images/image-intro-mobile.jpg" alt="Pessoas/Família">
     <div class="part1">
       <div class="container">
-        <div class="bar-top"></div>
+        <div class="bar-top desktop-item"></div>
         <div class="banner-text">
           <h1>Humanizar <br>
             seu seguro.</h1>
           <p> Obtenha sua cobertura de seguro de vida mais fácil e rápido. Combinamos nossa experiência <br>
             e tecnologia para ajudá-lo a encontrar o plano certo para você. Garanta que você
             e seus entes queridos estão protegidos.</p>
-          <button class="btn-outline-secondary" style="">Ver planos</button>
+          <button class="btn-outline-secondary" style="padding:15px 20px;">Ver planos</button>
         </div>
         <img class="banner-image-desktop" src="./images/image-intro-desktop.jpg" alt="Pessoas/Família">
       </div>
     </div>
-    <img class="lines-top" src="./images/bg-pattern-intro-right-desktop.svg" alt="Linhas irregulares do banner">
-    <img class="lines-bottom" src="./images/bg-pattern-intro-left-desktop.svg" alt="Linhas irregulares do banner">
+    <img class="lines-top desktop-item" src="./images/bg-pattern-intro-right-desktop.svg"
+      alt="Linhas irregulares do banner">
+    <img class="lines-top mobile-item" src="./images/bg-pattern-intro-right-mobile.svg"
+      alt="Linhas irregulares do banner">
+    <img class="lines-bottom desktop-item" src="./images/bg-pattern-intro-left-desktop.svg"
+      alt="Linhas irregulares do banner">
+    <img class="lines-bottom mobile-item" src="./images/bg-pattern-intro-left-mobile.svg"
+      alt="Linhas irregulares do banner">
     <div class="bar-bottom"></div>
 
   </section>
@@ -99,14 +107,19 @@
       </div>
       <div class="find-more">
         <h1>Encontre mais <br>sobre como nós trabalhamos</h1>
-        <img src="./images/bg-pattern-how-we-work-desktop.svg" alt="Linhas irregulares do encontre mais">
+        <img class="desktop-item" src="./images/bg-pattern-how-we-work-desktop.svg"
+          alt="Linhas irregulares do encontre mais">
+        <img class="mobile-item" src="./images/bg-pattern-how-we-work-mobile.svg"
+          alt="Linhas irregulares do encontre mais">
+
         <button class="btn-outline-secondary">Como nós trabalhamos</button>
       </div>
     </div>
   </div>
 
   <footer>
-
+    <img class="mobile-item" src="./images/bg-pattern-footer-mobile.svg" alt="Logo Insure">
+    <img class="desktop-item" src="./images/bg-pattern-footer-desktop.svg" alt="Logo Insure">
     <div class="container">
       <div class="header">
         <img src="./images/logo.svg" style="height: 25px;" alt="Logo Insure">
@@ -151,10 +164,51 @@
 
   </footer>
 
+  <section class="menu-mobile-modal" id="menu-mobile-modal">
+
+    <nav>
+      <ul>
+        <li>como nós trabalhamos</li>
+        <li>blog</li>
+        <li>conta</li>
+        <li class="btn-outline-secondary">veja os planos</li>
+      </ul>
+      <img style="position: absolute;bottom: 80px;" src="./images/bg-pattern-mobile-nav.svg">
+    </nav>
+
+
+  </section>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Duane Gabriel</a>.
+    Challenge by <a target="_blank" style="margin-left:5px;" href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">
+      Frontend Mentor </a>.
+    Coded by<a target="_blank" href="https://github.com/duane-gabriel" style="margin-left:5px;"> Duane Gabriel </a>.
   </div>
 </body>
+
+<script>
+
+  var menuIcon = document.getElementById("icon-menu-mobile");
+  var closeIcon = document.getElementById("icon-menu-mobile-close");
+  var el = document.getElementById("menu-mobile-modal");
+
+  function toggleMenu() {
+    menuIcon.classList.toggle("active");
+    closeIcon.classList.toggle("active");
+    el.classList.toggle("active");
+    document.body.classList.toggle("over-flow");
+  }
+
+  window.onload = function () {
+    menuIcon.onclick = () => {
+      toggleMenu();
+    };
+    closeIcon.onclick = () => {
+      toggleMenu();
+    }
+  }
+
+</script>
 
 </html>

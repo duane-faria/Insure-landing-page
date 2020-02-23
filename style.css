@@ -17,6 +17,15 @@ html, body{
   margin: 0 auto;
 }
 
+
+.desktop-item{
+  display: block;
+}
+
+.mobile-item{
+  display: none;
+}
+
 /* header */
 
 header{
@@ -36,6 +45,31 @@ header .container{
   flex-wrap: wrap;
 }
 
+.menu-mobile-modal{
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(270, 9%, 17%);
+  color: #fff;
+  z-index: 999;
+  position:absolute;
+  top: 80px;
+}
+
+.menu-mobile-modal nav {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 50px;
+
+}
+
+.active{
+  display: block !important;
+}
+.over-flow{
+  overflow: hidden;
+}
 header ul{
   list-style: none;
   display: flex;
@@ -67,6 +101,30 @@ nav.desktop{
 nav.mobile{
   display:none;
   height: 100%;
+}
+
+.menu-mobile-modal nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin:10px 0px;
+  text-align: center;
+}
+
+.menu-mobile-modal nav ul li{
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  font-family: "Karla";
+  font-weight: bold;
+}
+
+.menu-mobile-modal nav ul li:last-child{
+  padding: 10px 15px;
+}
+
+.menu-mobile-modal nav ul li:hover{
+  cursor: pointer;
 }
 
 /* botões */
@@ -247,6 +305,7 @@ div.content .container .find-more{
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 div.content .container .find-more h1{
@@ -274,11 +333,19 @@ footer{
   background-color: hsl(0, 0%, 98%);
 }
 
+.attribution{
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 footer .container {
   display: flex;
   height: auto;
   flex-direction: column;
   padding-top: 25px;
+  position: relative;
 }
 
 footer .container .header{
@@ -297,7 +364,9 @@ footer .container .bar{
 footer .container .header .icons{
   display: flex;
 }
-
+footer  img.mobile-item,footer img.desktop-item{
+  position: absolute;
+}
 footer .container .header .icons img{
   margin-right:15px;
   height: 20px;
@@ -374,7 +443,7 @@ footer .container .content ul li:hover{
  footer .container .content{
     flex-wrap: wrap;
   }
-  
+
   section.banner{
     height: auto;
   }
@@ -384,11 +453,26 @@ footer .container .content ul li:hover{
     display: flex;
     align-items: center;
     text-align: center;
+    z-index: 3;
   }
 
   section.banner .part1 .container img{
     order: 1;
     height: 100px;
+  }
+  
+  section.banner img.lines-bottom.mobile-item{
+    position: absolute;
+    top: 450px;
+    z-index: 0;
+    height: unset !important;
+  }
+
+  section.banner img.lines-top.mobile-item{
+    position: absolute;
+    top: 800px;
+    z-index: 0;
+    height: unset !important;
   }
 
   div.content .container article{
@@ -414,4 +498,54 @@ footer .container .content ul li:hover{
     flex-wrap: wrap;
   }
 
+  footer .container .header{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .container .header img:first-child{
+    object-fit: contain;
+    margin-bottom: 35px;
+  }
+
+  footer .container .bar{
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  section.banner .bar-bottom{
+    display: none;
+  }
+
+  div.content .container{
+    align-items: center;
+  }
+
+  div.content .container .find-more{
+    justify-content: center;
+    height: 300px;
+    width: 90%;
+  }
+
+  div.content .container .find-more h1{
+    margin-left: 0;
+  }
+
+  div.content .container .find-more button{
+    margin-right: 0;
+    margin-top: 25px;
+  }
+  
+  div.content .container .find-more img{
+    z-index: 0;
+    height: 100%;
+  }
+
+  .desktop-item{
+    display: none;
+  }
+
+  .mobile-item{
+    display: block;
+  }
 }
