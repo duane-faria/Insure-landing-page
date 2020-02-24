@@ -405,6 +405,13 @@ footer .container .content ul li:hover{
 
 /* media querys */
 
+@media (max-width:1440px) {
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @media(max-width:500px){
   nav.desktop{
     display: none;
