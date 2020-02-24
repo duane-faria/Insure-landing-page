@@ -1,5 +1,7 @@
 # Frontend Mentor Challenge - Insure landing page
 
+![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)
+
 Este é um projeto feito a partir de um desafio encontrado no site [Frontend Mentor](https://www.frontendmentor.io).
 
 O desafio consiste na construção de uma landing page. 
